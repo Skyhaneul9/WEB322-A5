@@ -5,6 +5,9 @@
 //mongodb+srv://haneul:<password>@web322.zd2xruj.mongodb.net/?retryWrites=true&w=majority
 //p34c7CAejWtnKL9a
 
+//https://github.com/Skyhaneul9/WEB322-A5
+//https://periwinkle-crocodile-cape.cyclic.app
+
 
 const exp = require("express") 
 const app = exp();
