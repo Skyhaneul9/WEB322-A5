@@ -75,7 +75,7 @@ app.post("/article", function(req, res) {
     blog_content.findOne({ title: req.body.title }).exec().then((data) =>{
         if(data) 
         {
-         res.render("read_more", {id:data.updateID, title:data.title, content:data.content, date:data.date, image:data.image, layout: false});
+         res.render("read_more", {id:data._id, title:data.title, content:data.content, date:data.date, image:data.image, layout: false});
         }
         else
         {
@@ -86,16 +86,17 @@ app.post("/article", function(req, res) {
 
 app.post("/update_article", function(req, res){
     blog_content.updateOne({
-        updateID : req.body.UpdateID
+        _id : req.body.UpdateID
     },
     {$set: {
         title: req.body.title,
         date : req.body.date,
         content: req.body.content,
         image : req.body.image
+    
      }}).exec();
 
-    res.redirect("/")
+    res.redirect("/");
 });
 
 app.get("/registration", function(req, res) {
